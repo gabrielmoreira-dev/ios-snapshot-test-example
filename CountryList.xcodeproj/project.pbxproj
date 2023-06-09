@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		983971652463C106A83F1396 /* Pods_CountryList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E05F67193A5BD2BB4A0FEF50 /* Pods_CountryList.framework */; };
 		C03529D12A32B2B6002C294E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03529D02A32B2B6002C294E /* AppDelegate.swift */; };
 		C03529D32A32B2B6002C294E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03529D22A32B2B6002C294E /* SceneDelegate.swift */; };
-		C03529D52A32B2B6002C294E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03529D42A32B2B6002C294E /* ViewController.swift */; };
 		C03529DA2A32B2B9002C294E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C03529D92A32B2B9002C294E /* Assets.xcassets */; };
 		C03529E82A32B2B9002C294E /* CountryListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03529E72A32B2B9002C294E /* CountryListTests.swift */; };
 		C03529F32A32B2B9002C294E /* CountryListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03529F22A32B2B9002C294E /* CountryListUITests.swift */; };
@@ -50,7 +49,6 @@
 		C03529CD2A32B2B6002C294E /* CountryList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountryList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03529D02A32B2B6002C294E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C03529D22A32B2B6002C294E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C03529D42A32B2B6002C294E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C03529D92A32B2B9002C294E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C03529DE2A32B2B9002C294E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C03529E32A32B2B9002C294E /* CountryListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountryListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +103,6 @@
 				7B7065ED0FE11222847141C7 /* Pods-CountryListTests.debug.xcconfig */,
 				5BCE6DC5D1D4AD8045F7B1BD /* Pods-CountryListTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -147,7 +144,6 @@
 				C0352A062A32B472002C294E /* Classes */,
 				C03529D02A32B2B6002C294E /* AppDelegate.swift */,
 				C03529D22A32B2B6002C294E /* SceneDelegate.swift */,
-				C03529D42A32B2B6002C294E /* ViewController.swift */,
 				C03529D92A32B2B9002C294E /* Assets.xcassets */,
 				C03529DE2A32B2B9002C294E /* Info.plist */,
 			);
@@ -402,7 +398,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0352A082A32B48F002C294E /* Country.swift in Sources */,
-				C03529D52A32B2B6002C294E /* ViewController.swift in Sources */,
 				C09E0F8B2A32BCEB007A6F4A /* CountryListViewController.swift in Sources */,
 				C03529D12A32B2B6002C294E /* AppDelegate.swift in Sources */,
 				C0352A0D2A32B4E0002C294E /* CountryListViewModel.swift in Sources */,
