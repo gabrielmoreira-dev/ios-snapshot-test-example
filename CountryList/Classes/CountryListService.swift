@@ -7,11 +7,11 @@ protocol CountryListServicing {
 final class CountryListService: CountryListServicing {
     func fetchCountries(completion: CountryListServiceCompletion) {
         completion([
-            Country(name: "England", capital: "London", flagImage: "eng"),
-            Country(name: "Brazil", capital: "Brasilia", flagImage: "bra"),
-            Country(name: "France", capital: "Paris", flagImage: "fra"),
-            Country(name: "Japan", capital: "Tokyo", flagImage: "jpn"),
-            Country(name: "Germany", capital: "Berlin", flagImage: "ger")
+            Country(name: "England", capital: "London", flagImage: "eng", isKnown: true),
+            Country(name: "Brazil", capital: "Brasilia", flagImage: "bra", isKnown: true),
+            Country(name: "France", capital: "Paris", flagImage: "fra", isKnown: false),
+            Country(name: "Japan", capital: "Tokyo", flagImage: "jpn", isKnown: false),
+            Country(name: "Germany", capital: "Berlin", flagImage: "ger", isKnown: true)
         ])
     }
 }

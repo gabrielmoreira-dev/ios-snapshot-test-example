@@ -45,6 +45,7 @@ extension CountryListViewController: UITableViewDataSource {
         cell.textLabel?.text = country.name
         cell.detailTextLabel?.text = "Capital: \(country.capital)"
         cell.imageView?.image = UIImage(named: country.flagImage)
+        cell.accessoryType = country.isKnown ? .checkmark : .none
         return cell
     }
 }
