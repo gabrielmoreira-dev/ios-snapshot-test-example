@@ -1,12 +1,13 @@
 @testable import CountryList
+import UIKit
 
 final class CountryListViewControllerUITests: SnapshotTestCase {
     override func setUp() {
         super.setUp()
-        recordMode = true
+        recordMode = false
     }
     
-    func testViewController() {
+    func testViewController_WhenProvidedACountryList_ShouldDisplayTheCountryList() {
         let countries = [
             Country(name: "England", capital: "London", flagImage: "eng", isKnown: true),
             Country(name: "Brazil", capital: "Brasilia", flagImage: "bra", isKnown: true),

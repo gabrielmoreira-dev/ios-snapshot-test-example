@@ -2,12 +2,12 @@ import UIKit
 
 final class CountryListViewController: UIViewController {
     private let viewModel: CountryListViewModeling
-    private let cellIdentifier = String(describing: UITableViewCell.self)
+    private let cellIdentifier = String(describing: CountryListTableViewCell.self)
     
     private lazy var tableView: UITableView = {
         let view = UITableView()
         view.dataSource = self
-        view.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        view.register(CountryListTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -39,13 +39,18 @@ extension CountryListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+                as? CountryListTableViewCell else {
+            return UITableViewCell()
+        }
+        
         let country = viewModel.countries[indexPath.row]
-        cell.textLabel?.text = country.name
-        cell.detailTextLabel?.text = "Capital: \(country.capital)"
-        cell.imageView?.image = UIImage(named: country.flagImage)
-        cell.accessoryType = country.isKnown ? .checkmark : .none
+        cell.setup(with: CountryListTableViewCellModel(
+            title: country.name,
+            description: "Capital: \(country.capital)",
+            image: UIImage(named: country.flagImage) ?? UIImage(),
+            isSelected: country.isKnown
+        ))
         return cell
     }
 }

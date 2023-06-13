@@ -42,4 +42,11 @@ class SnapshotTestCase: FBSnapshotTestCase {
         }
         return referenceImageDirectory
     }
+    
+    override func getImageDiffDirectory(withDefault dir: String?) -> String {
+        guard let imageDiffDirectory = imageDiffDirectory else {
+            fatalError("Do not call FBSnapshotVerifyView or FBSnapshotVerifyViewController directly, use verifyView or verifyViewController instead.")
+        }
+        return imageDiffDirectory
+    }
 }
