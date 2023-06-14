@@ -1,3 +1,5 @@
+import Foundation
+
 protocol CountryListViewModelDelegate: AnyObject {
     func presentCountries()
 }
@@ -5,6 +7,7 @@ protocol CountryListViewModelDelegate: AnyObject {
 protocol CountryListViewModeling {
     var countries: [Country] { get }
     func getCountries()
+    func getImage(address: String, completion: @escaping (Data?) -> Void)
 }
 
 final class CountryListViewModel {
@@ -23,6 +26,17 @@ extension CountryListViewModel: CountryListViewModeling {
             guard let self = self else { return }
             self.countries = $0
             self.delegate?.presentCountries()
+        }
+    }
+    
+    func getImage(address: String, completion: @escaping (Data?) -> Void) {
+        service.fetchImage(address: address) { result in
+            switch result {
+            case let .success(data):
+                completion(data)
+            case .failure:
+                completion(nil)
+            }
         }
     }
 }

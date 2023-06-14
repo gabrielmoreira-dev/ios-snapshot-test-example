@@ -60,16 +60,12 @@ extension CountryListViewController: UITableViewDataSource {
             isSelected: country.isKnown
         ))
         
-        if let url = URL(string: country.flagImage) {
-            DispatchQueue.global().async {
-                do {
-                    let data = try Data(contentsOf: url)
-                    let image = UIImage(data: data) ?? UIImage()
-                    DispatchQueue.main.async {
-                        cell.setupImage(image)
-                    }
-                } catch { }
+        viewModel.getImage(address: country.flagImage) { data in
+            var image = UIImage(systemName: "person.crop.circle.badge.xmark")
+            if let data = data {
+                image = UIImage(data: data)
             }
+            cell.setupImage(image ?? UIImage())
         }
         
         return cell

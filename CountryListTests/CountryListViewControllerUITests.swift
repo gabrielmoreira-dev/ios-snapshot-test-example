@@ -40,6 +40,10 @@ final class CountryListViewModelMock: CountryListViewModeling {
     
     func getCountries() {}
     
+    func getImage(address: String, completion: @escaping (Data?) -> Void) {
+        completion(nil)
+    }
+    
     init(countries: [Country] = []) {
         self.countries = countries
     }
