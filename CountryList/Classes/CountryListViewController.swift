@@ -54,33 +54,25 @@ extension CountryListViewController: UITableViewDataSource {
         }
         
         let country = viewModel.countries[indexPath.row]
+        cell.setup(with: CountryListTableViewCellModel(
+            title: country.name,
+            description: "Capital: \(country.capital)",
+            isSelected: country.isKnown
+        ))
         
         if let url = URL(string: country.flagImage) {
             DispatchQueue.global().async {
                 do {
                     let data = try Data(contentsOf: url)
                     let image = UIImage(data: data) ?? UIImage()
-                    self.setupCell(cell, with: country, and: image)
-                } catch {
-                    self.setupCell(cell, with: country, and: UIImage())
-                }
+                    DispatchQueue.main.async {
+                        cell.setupImage(image)
+                    }
+                } catch { }
             }
-        } else {
-            setupCell(cell, with: country, and: UIImage())
         }
         
         return cell
-    }
-    
-    private func setupCell(_ cell: CountryListTableViewCell, with country: Country, and image: UIImage) {
-        DispatchQueue.main.async {
-            cell.setup(with: CountryListTableViewCellModel(
-                title: country.name,
-                description: "Capital: \(country.capital)",
-                image: image,
-                isSelected: country.isKnown
-            ))
-        }
     }
 }
 

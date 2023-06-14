@@ -3,7 +3,6 @@ import UIKit
 struct CountryListTableViewCellModel {
     let title: String
     let description: String
-    let image: UIImage
     let isSelected: Bool
 }
 
@@ -43,8 +42,11 @@ final class CountryListTableViewCell: UITableViewCell {
     func setup(with viewModel: CountryListTableViewCellModel) {
         titleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.description
-        logoImage.image = viewModel.image
         accessoryType = viewModel.isSelected ? .checkmark : .none
+    }
+    
+    func setupImage(_ image: UIImage) {
+        logoImage.image = image
     }
 }
 
