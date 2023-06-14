@@ -15,9 +15,20 @@ final class CountryListViewControllerUITests: SnapshotTestCase {
             Country(name: "Japan", capital: "Tokyo", flagImage: "jpn", isKnown: false),
             Country(name: "Germany", capital: "Berlin", flagImage: "ger", isKnown: true)
         ]
-        
         let viewModel = CountryListViewModelMock(countries: countries)
         let sut = CountryListViewController(viewModel: viewModel)
+        
+        sut.presentCountries()
+        
+        verifyViewController(sut)
+    }
+    
+    func testViewController_WhenThereIsNoCountry_ShouldDisplayErrorView() {
+        let countries = [Country]()
+        let viewModel = CountryListViewModelMock(countries: countries)
+        let sut = CountryListViewController(viewModel: viewModel)
+        
+        sut.presentCountries()
         
         verifyViewController(sut)
     }

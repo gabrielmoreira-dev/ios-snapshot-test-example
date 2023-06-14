@@ -12,6 +12,13 @@ final class CountryListViewController: UIViewController {
         return view
     }()
     
+    private lazy var errorView: UIView = {
+        let view = ErrorView()
+        view.isHidden = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
@@ -30,6 +37,8 @@ final class CountryListViewController: UIViewController {
 extension CountryListViewController: CountryListViewModelDelegate {
     func presentCountries() {
         tableView.reloadData()
+        tableView.isHidden = viewModel.countries.isEmpty
+        errorView.isHidden = !viewModel.countries.isEmpty
     }
 }
 
@@ -64,6 +73,7 @@ private extension CountryListViewController {
     
     func setupHierarchy() {
         view.addSubview(tableView)
+        view.addSubview(errorView)
     }
     
     func setupConstraints() {
@@ -71,7 +81,12 @@ private extension CountryListViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            errorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            errorView.topAnchor.constraint(equalTo: view.topAnchor),
+            errorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            errorView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     

@@ -22,6 +22,8 @@
 		C0352A082A32B48F002C294E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0352A072A32B48F002C294E /* Country.swift */; };
 		C0352A0D2A32B4E0002C294E /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0352A0C2A32B4E0002C294E /* CountryListViewModel.swift */; };
 		C0352A122A32B580002C294E /* CountryListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0352A112A32B580002C294E /* CountryListService.swift */; };
+		C04528B42A3933AA00DC68E8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04528B32A3933AA00DC68E8 /* ErrorView.swift */; };
+		C04528B92A3938B700DC68E8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04528B32A3933AA00DC68E8 /* ErrorView.swift */; };
 		C09E0F8B2A32BCEB007A6F4A /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E0F8A2A32BCEB007A6F4A /* CountryListViewController.swift */; };
 		C0C401A42A340BC100BF7ADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C03529D92A32B2B9002C294E /* Assets.xcassets */; };
 		C241B162F983ED7F9B7C8A51 /* Pods_CountryList_CountryListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E42FE2CAFC6FF629EBEEDAF2 /* Pods_CountryList_CountryListTests.framework */; };
@@ -55,6 +57,7 @@
 		C0352A072A32B48F002C294E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		C0352A0C2A32B4E0002C294E /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
 		C0352A112A32B580002C294E /* CountryListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListService.swift; sourceTree = "<group>"; };
+		C04528B32A3933AA00DC68E8 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		C08F473A2A33F048003B7EB0 /* SnapshotTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTestCase.swift; sourceTree = "<group>"; };
 		C08F473F2A33F5CF003B7EB0 /* CountryListViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewControllerUITests.swift; sourceTree = "<group>"; };
 		C09E0F8A2A32BCEB007A6F4A /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
@@ -149,13 +152,22 @@
 		C0352A062A32B472002C294E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C04528B22A39338800DC68E8 /* Components */,
 				C0352A072A32B48F002C294E /* Country.swift */,
-				C02A8A682A3914DF000A8648 /* CountryListTableViewCell.swift */,
 				C09E0F8A2A32BCEB007A6F4A /* CountryListViewController.swift */,
 				C0352A0C2A32B4E0002C294E /* CountryListViewModel.swift */,
 				C0352A112A32B580002C294E /* CountryListService.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		C04528B22A39338800DC68E8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C02A8A682A3914DF000A8648 /* CountryListTableViewCell.swift */,
+				C04528B32A3933AA00DC68E8 /* ErrorView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C08F47392A33F021003B7EB0 /* Helper */ = {
@@ -339,6 +351,7 @@
 				C0352A0D2A32B4E0002C294E /* CountryListViewModel.swift in Sources */,
 				C0352A122A32B580002C294E /* CountryListService.swift in Sources */,
 				C03529D32A32B2B6002C294E /* SceneDelegate.swift in Sources */,
+				C04528B42A3933AA00DC68E8 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +366,7 @@
 				C032E0C12A33FB6F00C55D23 /* CountryListViewController.swift in Sources */,
 				C02A8A7E2A391E1A000A8648 /* SnapshotTestCase.swift in Sources */,
 				C02A8A852A391E22000A8648 /* CountryListViewControllerUITests.swift in Sources */,
+				C04528B92A3938B700DC68E8 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
